@@ -117,6 +117,8 @@ def find_duplicates(folder):
     }
 
     return duplicates
+
+
 def check_port(host="127.0.0.1", port=80):
     """Check if a TCP port is open."""
     import socket
