@@ -136,6 +136,8 @@ def check_port(host="127.0.0.1", port=80):
 def run_command(cmd):
     """Run a system command and return output."""
     import subprocess
+    if not isinstance(cmd, (list, str)):
+        return f"Invalid command type: {type(cmd)}. Must be str or list."
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, check=True)
         return result.stdout.strip()
