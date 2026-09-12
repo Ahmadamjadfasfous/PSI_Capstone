@@ -43,13 +43,16 @@ project/
 └── README.md                # Documentation
 
 
-🚀 How to Run
-1️⃣ Install Python
-Make sure you have Python 3.9+ installed.
-Check version:
+---
 
-bash
+## 🚀 How to Run
+
+### 1️⃣ Install Python
+Make sure you have **Python 3.9+** installed.  
+Check version:
+```bash
 python --version
+
 If not installed, download it from python.org.
 
 2️⃣ Install Dependencies
