@@ -53,6 +53,7 @@ Check version:
 ```bash
 python --version
 
+
 If not installed, download it from python.org.
 
 2️⃣ Install Dependencies
