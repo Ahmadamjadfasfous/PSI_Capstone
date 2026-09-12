@@ -132,6 +132,7 @@ def check_port(host="127.0.0.1", port=80):
         return False
     finally:
         s.close()
+        
 
 def run_command(cmd):
     """Run a system command and return output."""
@@ -143,6 +144,7 @@ def run_command(cmd):
         return result.stdout.strip()
     except subprocess.CalledProcessError as e:
         return f"Error running {cmd}: {e}"
+        
 
 def check_url(url):
     """Check HTTP status of a URL."""
