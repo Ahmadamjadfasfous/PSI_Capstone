@@ -1,31 +1,29 @@
-🕵️‍♂️ DFIR End-to-End Triage
-Digital Forensics & Incident Response Project
+# 🕵️‍♂️ DFIR End-to-End Triage  
+**Digital Forensics & Incident Response Project**
 
-📌 Overview
-This project is a Python-based Digital Forensics & Incident Response (DFIR) tool designed to perform a complete triage on a target system or evidence folder.
-It analyzes processes, files, network activity, and forensic artifacts (CSV logs), then generates a final report with visual charts to highlight suspicious activity.
+---
 
-⚙️ Features
-🔍 Process Analysis: List running processes with PID and name.
+## 📌 Overview
+This project is a Python-based **Digital Forensics & Incident Response (DFIR)** tool designed to perform a complete **triage** on a target system or evidence folder.  
+It analyzes processes, files, network activity, and forensic artifacts (CSV logs), then generates a final report with **visual charts** to highlight suspicious activity.
 
-📂 File Evidence: Extract file size, modification time, SHA-256 hash, and status (recent/normal).
+---
 
-🧩 Duplicate Detection: Identify duplicate files by comparing hashes.
+## ⚙️ Features
+- 🔍 **Process Analysis** → List running processes with PID and name.  
+- 📂 **File Evidence** → Extract file size, modification time, SHA-256 hash, and status (recent/normal).  
+- 🧩 **Duplicate Detection** → Identify duplicate files by comparing hashes.  
+- 📊 **Artifact Analysis** → Parse CSV logs to calculate events by type and hour.  
+- 🎨 **Visualization** → Generate **Stacked Bar Charts** showing event distribution by type and time.  
+- 🌐 **Network Checks** → Test if specific ports (e.g., 80) are open.  
+- 💻 **System Commands** → Run commands like `whoami` for context.  
+- 🌍 **HTTP Requests** → Validate responses from URLs (200, 403, 404).  
+- 📝 **Final Report** → Save results in JSON format inside the `reports` folder.
 
-📊 Artifact Analysis: Parse CSV logs to calculate events by type and hour.
+---
 
-🎨 Visualization: Generate Stacked Bar Charts showing event distribution by type and time.
-
-🌐 Network Checks: Test if specific ports (e.g., 80) are open.
-
-💻 System Commands: Run commands like whoami for context.
-
-🌍 HTTP Requests: Validate responses from URLs (200, 403, 404).
-
-📝 Final Report: Save results in JSON format inside the reports folder.
-
-📂 Project Structure
-Code
+## 📂 Project Structure
+```plaintext
 project/
 │
 ├── src/
@@ -43,18 +41,18 @@ project/
 │   └── triage_report.json   # Final report
 │
 └── README.md                # Documentation
+
 🚀 How to Run
 Install Python 3.9+.
 
 Install dependencies:
 
-bash
 pip install -r requirements.txt
 (Required: matplotlib, psutil, hashlib, requests)
 
 Run the tool:
 
-bash
+
 python src/main.py data/sample_evidence data/artifacts.csv
 Outputs:
 
