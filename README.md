@@ -192,7 +192,7 @@ The project includes unit tests for core functionality.
 Run the tests with:
 
 ```bash
-pytest
+python -m pytest
 ```
 
 The tests cover functions such as file hashing and duplicate-file detection.
