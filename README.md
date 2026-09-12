@@ -42,19 +42,38 @@ project/
 │
 └── README.md                # Documentation
 
+
 🚀 How to Run
-Install Python 3.9+.
+01
+Install Python
+Prerequisite
+Make sure you have Python 3.9 or higher installed on your system.
 
-Install dependencies:
+Check version with python --version
 
+If not installed, download from python.org
+
+02
+Install Dependencies
+Install the required Python libraries before running the tool.
+
+Run in terminal
 pip install -r requirements.txt
-(Required: matplotlib, psutil, hashlib, requests)
 
-Run the tool:
+Required packages: matplotlib, psutil, hashlib, requests
 
+03
+Run the Tool
+Execute the main script with evidence folder and artifacts file.
 
+Run in terminal
 python src/main.py data/sample_evidence data/artifacts.csv
-Outputs:
+
+
+04
+Check Outputs
+Result
+Verify that reports and charts are generated successfully.
 
 JSON report → reports/triage_report.json
 
