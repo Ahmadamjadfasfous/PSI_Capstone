@@ -128,6 +128,8 @@ def check_port(host="127.0.0.1", port=80):
         return True
     except Exception:
         return False
+    finally:
+        s.close()
 
 def run_command(cmd):
     """Run a system command and return output."""
