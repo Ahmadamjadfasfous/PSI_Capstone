@@ -106,6 +106,7 @@ json
     "https://httpbin.org/status/404": "404 Not Found"
   }
 }
+
 🎯 Notes
 Evidence files have different roles:
 
@@ -118,4 +119,8 @@ report.docx → Formal incident report.
 artifacts.csv is the main structured log file used for analysis.
 
 All outputs are saved automatically in the reports folder.
+
+🏆 Conclusion
+This project provides a complete DFIR workflow: collecting evidence, analyzing artifacts, visualizing activity, and producing a professional report.
+It is structured to be clear, detailed.
 
