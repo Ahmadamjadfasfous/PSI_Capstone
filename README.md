@@ -1,105 +1,119 @@
-# 🕵️‍♂️ DFIR End-to-End Triage  
-**Digital Forensics & Incident Response Project**
+# 🧑‍💻 DFIR End-to-End Triage
+
+### Digital Forensics & Incident Response Project
 
 ---
 
 ## 📌 Overview
-This project is a Python-based **Digital Forensics & Incident Response (DFIR)** tool designed to perform a complete **triage** on a target system or evidence folder.  
-It analyzes processes, files, network activity, and forensic artifacts (CSV logs), then generates a final report with **visual charts** to highlight suspicious activity.
+
+This project is a Python-based **Digital Forensics & Incident Response (DFIR)** tool designed to perform a complete triage on a target system or evidence folder.
+
+It analyzes processes, files, network activity, and forensic artifacts (CSV logs), then generates a final report with visual charts to highlight suspicious activity.
 
 ---
 
 ## ⚙️ Features
-- 🔍 **Process Analysis** → List running processes with PID and name.  
-- 📂 **File Evidence** → Extract file size, modification time, SHA-256 hash, and status (recent/normal).  
-- 🧩 **Duplicate Detection** → Identify duplicate files by comparing hashes.  
-- 📊 **Artifact Analysis** → Parse CSV logs to calculate events by type and hour.  
-- 🎨 **Visualization** → Generate **Stacked Bar Charts** showing event distribution by type and time.  
-- 🌐 **Network Checks** → Test if specific ports (e.g., 80) are open.  
-- 💻 **System Commands** → Run commands like `whoami` for context.  
-- 🌍 **HTTP Requests** → Validate responses from URLs (200, 403, 404).  
-- 📝 **Final Report** → Save results in JSON format inside the `reports` folder.
+
+- 🔵 **Process Analysis** → List running processes with PID and name.
+- 📄 **File Evidence** → Extract file size, modification time, SHA-256 hash, and status (recent/normal).
+- 🧩 **Duplicate Detection** → Identify duplicate files by comparing hashes.
+- 📊 **Artifact Analysis** → Generate CSV logs to calculate events by type and hour.
+- 📈 **Visualization** → Generate stacked bar charts showing event distribution by type and time.
+- 🌐 **Network Checks** → Test if specific ports (e.g., 80) are open.
+- 💻 **System Commands** → Run commands like `whoami` for context.
+- 🌍 **HTTP Requests** → Validate responses from URLs (200, 403, 404).
+- 📝 **Final Report** → Save results as a JSON format inside the `reports` folder.
 
 ---
 
-## 📂 Project Structure
-```plaintext
+## 📁 Project Structure
+
+```text
 project/
 │
 ├── src/
-│   ├── main.py              # Main entry point
-│   ├── data_handler.py      # CSV reading & analysis
-│   ├── logic.py             # Core logic (processes, files, ports, HTTP)
-│   └── utils.py             # Helper functions
+│   ├── main.py             # Main entry point
+│   ├── data_handler.py     # CSV reading & analysis
+│   ├── logic.py            # Core logic (processes, files, ports, HTTP)
+│   └── utils.py            # Helper functions
 │
 ├── data/
-│   ├── sample_evidence/     # Evidence files (notes.txt, payload.bin, report.docx)
-│   └── artifacts.csv        # Raw logs for analysis
+│   ├── sample_evidence/    # Evidence files (notes.txt, payload.bin, report.docx)
+│   └── artifacts.csv       # Raw logs for analysis
 │
 ├── reports/
 │   ├── artifact_stacked.png # Generated chart
 │   └── triage_report.json   # Final report
 │
-└── README.md                # Documentation
-
+└── README.md               # Documentation
+```
 
 ---
 
 ## 🚀 How to Run
 
 ### 1️⃣ Install Python
-Make sure you have **Python 3.9+** installed.  
-Check version:
+
+Make sure you have **Python 3.9+** installed.
+
+Check your Python version:
+
 ```bash
 python --version
+```
 
+If Python is not installed, download it from:
 
-If not installed, download it from python.org.
+https://www.python.org/downloads/
 
-2️⃣ Install Dependencies
+### 2️⃣ Install Dependencies
+
 Install the required libraries:
 
-bash
+```bash
 pip install -r requirements.txt
-Required packages:
+```
 
-matplotlib
+### 3️⃣ Run the Tool
 
-psutil
+Run the main script with the evidence folder and artifacts file:
 
-hashlib
-
-requests
-
-3️⃣ Run the Tool
-Execute the main script with the evidence folder and artifacts file:
-
-bash
+```bash
 python src/main.py data/sample_evidence data/artifacts.csv
-4️⃣ Check Outputs
-After running, verify that reports and charts are generated successfully:
+```
 
-JSON report → reports/triage_report.json
+After running the tool, verify that the following outputs are generated successfully:
 
-Chart → reports/artifact_stacked.png
+```text
+reports/
+├── triage_report.json
+└── artifact_stacked.png
+```
 
-📊 Example Chart
-The chart shows events grouped by hour and stacked by type:
+---
 
-Hour 08 → High activity (process + file_created + file_deleted).
+## 📊 Example Chart
 
-Hour 09 → Moderate activity.
+The chart shows events grouped by hour and stacked by event type.
 
-Hour 10 → Mixed events including critical ones.
+Example:
 
-Hour 11 → Low activity.
+```text
+Hour 08 → High activity (process + file_created + file_deleted)
+Hour 09 → Moderate activity
+Hour 10 → Mixed events including critical ones
+Hour 11 → Low activity
+```
 
-📝 Example Report (triage_report.json)
-json
+---
+
+## 📄 Example Report (`triage_report.json`)
+
+```json
 {
   "target_folder": "data/sample_evidence",
-  "generated_at": "Sat Sep 12 05:50:00 2026",
-  "process_count": 5,
+  "generated_at": "Sat Sep 12 05:50:06 2026",
+  "process_count": 9,
   "file_count": 12,
   "recent_files": ["payload.bin"],
   "duplicate_files": {
@@ -114,12 +128,9 @@ json
     },
     "by_hour": {
       "08": 9,
-      "09": 4,
-      "10": 7,
-      "11": 3
+      "09": 4
     }
   },
-  "port_80_open": true,
   "whoami": "student",
   "http_checks": {
     "https://httpbin.org/status/200": "200 OK",
@@ -127,21 +138,25 @@ json
     "https://httpbin.org/status/404": "404 Not Found"
   }
 }
+```
 
-🎯 Notes
+---
+
+## 📌 Notes
+
 Evidence files have different roles:
 
-notes.txt → Investigator notes.
+- `notes.txt` → Investigator notes.
+- `payload.bin` → Binary/malware sample.
+- `report.docx` → Formal incident report.
+- `artifacts.csv` → The main structured log file used for analysis.
 
-payload.bin → Binary/malware sample.
+All outputs are saved automatically in the `reports` folder.
 
-report.docx → Formal incident report.
+---
 
-artifacts.csv is the main structured log file used for analysis.
+## 🏁 Conclusion
 
-All outputs are saved automatically in the reports folder.
+This project provides a complete DFIR workflow by collecting evidence, analyzing forensic artifacts, visualizing activity, and producing a structured final report.
 
-🏆 Conclusion
-This project provides a complete DFIR workflow: collecting evidence, analyzing artifacts, visualizing activity, and producing a professional report.
-It is structured to be clear, detailed.
-
+It is designed to be clear, detailed, and practical for digital forensics and incident response analysis.
