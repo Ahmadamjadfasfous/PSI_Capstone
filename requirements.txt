@@ -2,3 +2,4 @@ psutil
 pytest
 requests
 matplotlib
+numpy
