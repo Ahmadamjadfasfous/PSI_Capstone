@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🕵️‍♂️ DFIR End-to-End Triage
 
 ### Digital Forensics & Incident Response Project
