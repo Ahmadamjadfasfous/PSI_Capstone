@@ -282,24 +282,3 @@ To pass the capstone project, your codebase **must** incorporate the following e
 * **External Package / API Integration**: Utilization of standard libraries alongside third-party modules (e.g., `requests`, `pandas`, `matplotlib`, `rich`, or `pytest`).
 * **Clean & Readable Code**: PEP 8 compliance, informative variable/function naming, concise comments, and explicit docstrings for major functions/classes.
 
----
-
-## 📂 Repository Structure
-
-Your final submission repository should adhere to a clean layout similar to this:
-
-```text
-capstone_project/
-├── data/                  # Sample or generated datasets (CSV, JSON, DB)
-│   └── sample_data.csv
-├── src/                   # Core application source code
-│   ├── __init__.py
-│   ├── main.py            # Main entry point for running the application
-│   ├── utils.py           # Helper functions and validations
-│   └── logic.py           # Main business/data processing logic
-├── tests/                 # Unit tests (optional/extra credit)
-│   └── test_logic.py
-├── .gitignore             # Git ignore file for __pycache__, envs, etc.
-├── requirements.txt       # List of Python dependencies
-└── README.md              # Project documentation and setup instructions
->>>>>>> 1738576ca10037fe1450c351712fd0e1c2fa11ea
